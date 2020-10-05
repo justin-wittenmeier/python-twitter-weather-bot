@@ -1,8 +1,8 @@
 import requests
 import tweepy
 
-auth = tweepy.OAuthHandler('twitter token','twitter token') # twitter loggin info
-auth.set_access_token('twitter token', 'twitter token') # twitter loggin info
+auth = tweepy.OAuthHandler('twitter token','twitter token') # twitter login info
+auth.set_access_token('twitter token', 'twitter token') # twitter login info
 api = tweepy.API(auth)
 
 r = requests.get('open weather map url') # openweathermap.org api
