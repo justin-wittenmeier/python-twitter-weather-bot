@@ -1,5 +1,6 @@
 import requests
 import tweepy
+import string
 
 auth = tweepy.OAuthHandler('twitter token','twitter token') # twitter login info
 auth.set_access_token('twitter token', 'twitter token') # twitter login info
@@ -29,6 +30,6 @@ fTemp = lambda x: round((x - 273.15) * 9/5 + 32)
 user = api.me()
 post_number = user.statuses_count + 1
 
-manchester_weather = f'Current Weather in Manchester TN\n\nSky: {desc}\nTemp: {fTemp(temp)}°F\nFeels Like: {fTemp(feels_like)}°F\nWind Speed: {wind_speed}mph\n\nI am a bot this was posted automatically #: {post_number}'
+manchester_weather = f'Weather in Manchester TN\n\nSky: {string.capwords(desc)}\nTemp: {fTemp(temp)}°F\nFeels Like: {fTemp(feels_like)}°F\nWind Speed: {wind_speed}mph\n\nI am a bot this was posted automatically\n#{post_number}'
 
 api.update_status(manchester_weather)
